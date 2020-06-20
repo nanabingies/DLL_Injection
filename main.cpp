@@ -9,7 +9,7 @@ using namespace std;
 #pragma comment(lib, "Shlwapi.lib")
 
 int main(void) {
-	char DllPath[] = "C:\\Users\\Bingies\\source\\repos\\InjectDLL\\Debug\\InjectDLL.dll"; // Dll File Path
+	char DllPath[] = "\\.\\InjectDLL.dll"; // Dll File Path
 	if (!PathFileExists(DllPath)) {
 		cout << "Invalid DLL File Path\n";
 		exit(-1);
@@ -17,7 +17,7 @@ int main(void) {
 
 	size_t len = strlen(DllPath) + 1;
 	DWORD pid, nWrite;
-	HWND hwnd = FindWindow(NULL, "Geek 1");
+	HWND hwnd = FindWindow(NULL, "Window of Target Application");
 	if (NULL == hwnd) {
 		cout << "FindWindow Failure!\n";
 		exit(-1);
